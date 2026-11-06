@@ -87,13 +87,6 @@ Postgres/Supabase/Prisma. Same for `lib/rateLimit.js` (use Redis/Upstash).
 - `showScenario` in Forecast is never toggled in the original; kept as is.
 - Fonts via `next/font` (Inter) instead of a CSS `@import`; Tailwind v4 via `@tailwindcss/postcss`.
 
-## Not verified here
-
-I could not run `npm install` / `next build` in my sandbox (no network). What I did verify: all 20 API handlers
-(auth cookie flow, validation, tasks, recs, Telegram parsing, forecast maths) with a Node smoke test, every
-component server-rendered without errors, and all files parsed/checked for undefined identifiers. Expect to fix small
-things on first `next build`.
-
 ## Structure
 
 ```
