@@ -1,6 +1,6 @@
 "use client";
 import { useState, useRef, useEffect } from "react";
-import { Icons } from "./ui/Icons";
+import { Icons } from "@/app/components/ui/Icons";;
 
 const advisorReply = (q, city) => {
   const t = q.toLowerCase();

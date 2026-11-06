@@ -16,4 +16,6 @@ export const Icons = {
   Bell: ({ className }) => <SvgWrapper className={className}><path d="M18 8a6 6 0 0 0-12 0c0 7-3 9-3 9h18s-3-2-3-9M13.7 21a2 2 0 0 1-3.4 0" /></SvgWrapper>,
   Chevron: ({ className }) => <SvgWrapper className={className}><path d="m9 18 6-6-6-6" /></SvgWrapper>,
   Send: ({ className }) => <SvgWrapper className={className}><path d="M22 2 11 13M22 2l-7 20-4-9-9-4z" /></SvgWrapper>,
+  Telegram: ({ className }) => <SvgWrapper className={className}><path d="M22 2 11 13M22 2l-7 20-4-9-9-4z" /></SvgWrapper>,
+  Sparkles: ({ className }) => <SvgWrapper className={className}><path d="M5 15a7 7 0 0 1 14 0M12 3v4M3 12h4M17 12h4M12 17v4" /></SvgWrapper>
 };
