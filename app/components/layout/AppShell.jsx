@@ -39,17 +39,17 @@ export default function AppShell({ children }) {
   const ready = isAuthPage || (!authLoading && user);
 
   return (
-    <div className="min-h-screen bg-[#FBF8F5] text-[#1E2D24] font-sans flex flex-col selection:bg-[#FFF0F6] selection:text-[#FF4B93]">
-      <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-[#EAF3EC] shadow-sm">
-        <div className="relative max-w-[1100px] mx-auto px-4 h-16 flex items-center justify-between md:grid md:grid-cols-[1fr_auto_1fr] md:gap-x-8">
+    <div className="min-h-screen bg-sakuIvory text-sakuText font-sans flex flex-col selection:bg-sakuPink-light selection:text-sakuPink">
+      <header className="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-sakuGreen-light shadow-sm">
+        <div className="relative max-w-275 mx-auto px-4 h-16 flex items-center justify-between md:grid md:grid-cols-[1fr_auto_1fr] md:gap-x-8">
           <Link href="/" className="flex items-center gap-2 justify-self-start">
-            <Logo className="w-7 h-9" />
+            <Logo className="w-7 h-7" />
             <div className="flex flex-col">
               <div className="flex items-center text-base font-extrabold tracking-wider leading-none">
-                <span className="text-[#FF4B93]">SAKU</span>
-                <span className="text-[#1F5932] ml-1">PUAN</span>
+                <span className="text-sakuPink">SAKU</span>
+                <span className="text-sakuGreen ml-1">PUAN</span>
               </div>
-              <span className="text-[10px] text-[#485A50] font-medium hidden sm:inline">Keuangan Rumah Tangga</span>
+              <span className="text-[10px] text-sakuText-muted font-medium hidden sm:inline">Keuangan Rumah Tangga</span>
             </div>
           </Link>
 
@@ -62,7 +62,7 @@ export default function AppShell({ children }) {
                     key={n.href}
                     href={n.href}
                     className={`flex items-center gap-1.5 px-2.5 lg:px-3 py-2 rounded-xl whitespace-nowrap transition-colors ${
-                      pathname.startsWith(n.href) ? "bg-[#EAF3EC] text-[#1F5932]" : "text-[#6E8276] hover:text-[#1F5932]"
+                      pathname.startsWith(n.href) ? "bg-sakuGreen-light text-sakuGreen" : "text-sakuText-light hover:text-sakuGreen"
                     }`}
                   >
                     <Icon className="w-4 h-4 hidden lg:block" />
@@ -114,7 +114,7 @@ export default function AppShell({ children }) {
         {showAppNav && menuOpen && (
           <>
             <div className="md:hidden fixed inset-0 top-16 z-[-1] bg-sakuText/30" onClick={() => setMenuOpen(false)} aria-hidden="true" />
-            <nav id="mobile-menu" aria-label="Menu halaman" className="md:hidden absolute top-full inset-x-0 bg-white border-b border-[#EAF3EC] shadow-floating px-3 py-3 fade-up">
+            <nav id="mobile-menu" aria-label="Menu halaman" className="md:hidden absolute top-full inset-x-0 bg-white border-b border-sakuGreen-light shadow-floating px-3 py-3 fade-up">
               {NAV_ITEMS.map((n) => {
                 const Icon = Icons[n.icon];
                 const active = pathname.startsWith(n.href);
@@ -124,7 +124,7 @@ export default function AppShell({ children }) {
                     href={n.href}
                     aria-current={active ? "page" : undefined}
                     className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl text-sm font-semibold transition-colors ${
-                      active ? "bg-[#EAF3EC] text-[#1F5932]" : "text-[#485A50] hover:bg-[#FBF8F5]"
+                      active ? "bg-sakuGreen-light text-sakuGreen" : "text-sakuText-muted hover:bg-sakuIvory"
                     }`}
                   >
                     <Icon className="w-5 h-5" />
@@ -137,7 +137,7 @@ export default function AppShell({ children }) {
         )}
       </header>
 
-      <main className={`flex-1 w-full mx-auto px-4 py-6 sm:py-8 ${wide ? "md:max-w-none md:px-0" : "max-w-[1000px]"}`}>
+      <main className={`flex-1 w-full mx-auto px-4 py-6 sm:py-8 ${wide ? "md:max-w-none md:px-0" : "max-w-250"}`}>
         {ready ? children : <p className="text-center text-sm text-sakuText-light py-20">Memuat...</p>}
       </main>
 
@@ -153,10 +153,10 @@ export default function AppShell({ children }) {
       )}
       {showAppNav && user && <AdvisorToggle name={user.name} city={city} />}
 
-      <footer className="hidden md:block bg-[#1E2D24] text-white py-6 mt-auto border-t border-[#485A50]/40">
-        <div className="max-w-[1000px] mx-auto px-4 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-400 gap-2">
+      <footer className="hidden md:block bg-sakuText text-white py-6 mt-auto border-t border-sakuText-muted/40">
+        <div className="max-w-250 mx-auto px-4 flex flex-col sm:flex-row items-center justify-between text-xs text-gray-400 gap-2">
           <div className="flex items-center gap-2">
-            <Logo className="w-5 h-6" />
+            <Logo className="w-5 h-5" />
             <span className="font-bold text-white">SAKUPUAN Prototype</span>
           </div>
           <p>© 2026 SAKUPUAN. Asesmen Finansial & Pencatatan Kontekstual.</p>

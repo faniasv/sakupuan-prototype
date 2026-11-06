@@ -26,7 +26,7 @@ export default function Dashboard() {
     </div>
 
     {/* Card 1 — Financial Health Score */}
-    <section className="rounded-3xl bg-gradient-to-br from-sakuGreen to-sakuGreen-dark text-white p-5 shadow-soft space-y-3">
+    <section className="rounded-3xl bg-linear-to-br from-sakuGreen to-sakuGreen-dark text-white p-5 shadow-soft space-y-3">
       <div className="flex justify-between text-sakuGreen-border">
         <span className="text-[10px] font-extrabold uppercase tracking-wider">
           Financial Health Score
