@@ -1,19 +1,27 @@
-"use client";
-
-import { usePathname } from "next/navigation";
-import AppHeader from "./components/ui/AppHeader";
+import { Inter } from "next/font/google";
 import "./globals.css";
+import AppProvider from "@/app/components/providers/AppProvider";
+
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700", "800"],
+  variable: "--font-inter",
+  display: "swap",
+});
+
+export const metadata = {
+  title: { default: "SAKUPUAN - Dompet Tenang, Dompet Senang", template: "%s · SAKUPUAN" },
+  description:
+    "SAKUPUAN membantu mencatat pemasukan dan pengeluaran, memantau belanja pangan, dan memahami dampak perubahan harga pangan bagi keuangan rumah tangga.",
+};
+
+export const viewport = { themeColor: "#1F5932" };
 
 export default function RootLayout({ children }) {
-  const pathname = usePathname();
-  // Hanya tampilkan AppHeader jika BUKAN berada di halaman Landing Page ('/')
-  const isAppPage = pathname !== "/";
-
   return (
-    <html lang="id">
-      <body className="bg-sakuIvory text-sakuText antialiased">
-        {isAppPage && <AppHeader />}
-        <main>{children}</main>
+    <html lang="id" className={inter.variable}>
+      <body>
+        <AppProvider>{children}</AppProvider>
       </body>
     </html>
   );
